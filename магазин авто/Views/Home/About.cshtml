@@ -1,0 +1,24 @@
+﻿@model магазин_авто.Models.IndexViewModel
+@using магазин_авто.Helpers
+@{
+    ViewBag.Title = "Home Page";
+}
+<table class="table">
+    <tr>
+        <td>Модель</td>
+        <td>Производитель</td>
+        <td>Цена</td>
+    </tr>
+    @foreach (var item in Model.Cars)
+    {
+    <tr>
+        <td>@item.CarBrand</td>
+        <td>@item.Name</td>
+        <td>@item.Price</td>
+    </tr>
+    }
+</table>
+<br />
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("About", new { i = x }))
+</div>

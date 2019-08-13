@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Buy";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="/Content/Site.css" />
+    <title>Покупка</title>
+</head>
+<body>
+    <div>
+        <h3>Форма оформления покупки</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.CarId" name="CarId" />
+            <table>
+                <tr>
+                    <td><p>Введите свой email: </p></td>
+                    <td><input type="email" name="Email" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите пароль :</p></td>
+                    <td>
+                        <input type="text" name="Password" />
+                    </td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

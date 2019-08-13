@@ -1,0 +1,45 @@
+﻿@model  IList<магазин_авто.Models.Car>
+@{
+    ViewBag.Title = "ShowUsers_of_Car";
+}
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="~/Content/Site.css" />
+</head>
+<body>
+    
+    @foreach (var item in Model)
+        {
+            <p>
+                Название модели: @Html.DisplayFor(modelItem => item.Name)
+            </p>
+            <p>
+                Цена автомобиля: @Html.DisplayFor(modelItem => item.Price)$
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.CarBrand)
+            </p>
+            <table class="table">
+                <tr>
+
+                    <th>Почта</th>
+                    <th>Пароль</th>                    
+                </tr>
+                @foreach (var i in item.BuyCars)
+                {
+                    <tr>
+                        <td>
+                           <a href="/Home/ShowCars_of_User/@i.BuyerId">@Html.DisplayFor(modelItem => i.Buyer.Email)</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => i.Buyer.Password)
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        }
+       
+</body>
+</html>

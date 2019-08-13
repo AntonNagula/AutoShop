@@ -1,0 +1,29 @@
+﻿@model магазин_авто.Models.Car
+@{
+    ViewBag.Title = "UpdateCar";
+}
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="~/Content/Site.css" />
+</head>
+<body>
+    <div id="start">
+        <h4>  Выберите файл для загрузки</h4>
+        @using (Html.BeginForm("UpdateCar", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="hidden" value="@Model.Id" name="Id" />
+            <input class="enter" type="file" name="upload" /><br>
+            <label for="1">Название модели</label>
+            <input id="1" class="enter" type="text" name="Name" value="@Model.Name" /><br>
+            <label for="2">Бренд</label>
+            <input id="2" class="enter" type="text" name="CarBrand" value="@Model.CarBrand" /><br>
+            <label for="3">Количество моделей</label>
+            <input id="3" class="enter" type="text" pattern="^[ 0-9]+$" name="Count_Of_Unit" value="@Model.Count_Of_Unit" /><br>
+            <label for="4">Цена</label>
+            <input id="4" class="enter" type="text" name="Price" value="@Model.Price" /><br>
+            <textarea name="Info" value="@Model.Info"></textarea>
+            <input class="enter" type="submit" value="Загрузить" />
+        }
+    </div>
+</body>
+</html>
